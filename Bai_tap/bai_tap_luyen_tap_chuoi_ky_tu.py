@@ -64,12 +64,13 @@ def kiem_tr_so_am():
         print("đây không phải là số âm ")
         
 # Bài 7: Viết chương trình nhập vào chuỗi ký tự, kiểm tra xem chuỗi đó có phải số thập phân hay không
-nhap_vao_chuoi = input("nhap vao ky tu:")
-if nhap_vao_chuoi.isdecimal() and  nhap_vao_chuoi.isdigit():    #isdecimal kiểm tra xem số thập phân hay không isdigit kiểm tra phải là só hay k
-             print(nhap_vao_chuoi.isdecimal())
-             print("chuoi la so thap phan") #true
+chuoi = input("Nhập vào chuỗi ký tự: ").strip()
+if chuoi.count('.') == 1 and chuoi.replace('.', '', 1).replace('-', '', 1).isdigit():
+    print("Chuỗi nhập vào là một số thập phân.")
 else:
-         print(" chuoi la so thap phan")     #false      
+    print("Chuỗi nhập vào không phải là một số thập phân.")
+
+
 # Bài 8: Viết chương trình nhập vào 2 xâu ký tự str_1 và str_2. Kiểm tra xem str_2 có nằm trong str_1 hay không và ngược lại
 #nhập vào 2 chuỗi ký tự
 str_1 = input("Nhap vao chuoi str_1: ")
